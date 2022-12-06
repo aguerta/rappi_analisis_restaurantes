@@ -72,12 +72,11 @@ Estos son los significados de cada atributo en los .csv's:
 
 #### Archivos secundarios:
 <li>atributos_sucursales_bruto.csv: (Los atributos de cada sucursal pero sin limpiar / transformar)
-    <ul>| Name of attribute     | Type of data               | Descripción                |
-| :---                  |    :----:                 |          ---:             |
-| id_sucursal           | int64                     | El id único de la sucursal.               |
-| attributes            | list                      | Lista que contiene [calificación_promedio, número de calificaciones, tiempo_entrega, tipo de envío].                  |
-| prices            | list                      | Lista que contiene strings de los precios de todo el catálogo de dicha sucursal.                 |
-| opinions            | list                      | Lista que contiene en tuplas las opiniones con sus porcentajes de dicha sucursal.                  |</ul>
+    <ul>- id_sucursal (int64): El id único de la sucursal.</ul>
+    <ul>- attributes (list): Lista que contiene [calificación_promedio, número de calificaciones, tiempo_entrega, tipo de envío].</ul>
+    <ul>- prices (list): Lista que contiene strings de los precios de todo el catálogo de dicha sucursal.</ul>
+    <ul>- opinions (list): Lista que contiene en tuplas las opiniones con sus porcentajes de dicha sucursal.</ul>
+</li>
 
 <li>subcatalogos.csv: (Lista de urls de cada subcatálogo de cadenas de comida de cada país)
     <ul>- id_subcatalogo (int64): El id único de este subcatálogo.</ul>
