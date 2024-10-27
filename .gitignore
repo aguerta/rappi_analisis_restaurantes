@@ -1,2 +1,6 @@
-# Ignora archivos de venv
+# Ignore venv
 /venv
+# Ignore notebook checkpoints
+/.ipynb_checkpoints
+# Ignore binaries
+*.pbix

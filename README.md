@@ -29,67 +29,96 @@ Entendiendo como sucursal (O restaurante en este proyecto) la división específ
 
 ### La data:
 
-Estos son los significados de cada atributo en los .csv's ubicados en `./csv_files/`:
+Lo siguiente es una breve descripción de los .csv's ubicados en `./csv_files/`
 
-#### Archivos principales:
-<ol>
-<li>paises_rappi.csv:
-    <ul>- id_pais (int64): El id único de cada país</ul>
-    <ul>- nombre (str): El nombre de cada país</ul>
-    <ul>- suburl_pais (str): La extensión del dominio de cada país</ul>
-    <ul>- conversion_dolares_moneda (float64): La conversión de 1000 doláres para cada moneda local.</ul>
-</li>
+#### paises_rappi.csv:
+Descripción: Tabla de 8 rows que relaciona datos importantes de cada país con su id.
 
-<li>cadenas_restaurantes.csv: 
-    <ul>- id_cadena (int64): El id único de la cadena</ul>
-    <ul>- nombre_cadena (str): El nombre de la cadena.</ul>
-    <ul>- url_cadena (str): La url de la cadena.</ul>
-    <ul>- id_pais (int64): El país asociada a la cadena.</ul>
-</li>
+| Nombre de la columna         | Tipo de dato | Descripción                                           |
+|------------------------------|--------------|-------------------------------------------------------|
+| id_pais                      | int64        | El id único de cada país                              |
+| nombre                       | str          | El nombre de cada país                                |
+| suburl_pais                  | str          | La URL de cada país en la aplicación web                 |
+| conversion_dolares_moneda    | float64      | La conversión de 1000 doláres para cada moneda local  |
 
-<li>sucursales.csv.
-    <ul>- id_sucursal (int64): El id único de la sucursal</ul>
-    <ul>- id_cadena (int64): EL id de la cadena asociada a la sucursal.</ul>
-    <ul> - url_sucursal (str): La url asociada a la sucursal.</ul>
-    <ul>- nombre_sucursal (str): El nombre de la sucursal.</ul>
-    <ul>- direccion_sucursal (str): La dirección de la sucursal.</ul>
-</li>
+#### cadenas_restaurantes.csv:
+Descripción: Tabla de 13,096 rows que relaciona las cadenas de restaurantes de todo Rappi con cada uno de sus países.
 
-<li>atributos_sucursales_parsed.csv.
-    <ul>- id_sucursal (int64): El id único de la sucursal</ul>
-    <ul>- mostraba_opiniones (bool): True o False de si la cadena registraba opiniones.</ul>
-    <ul>- overral_stars (float64): La calificación promedio del 1 al 5 de la sucursal. (Los 0s significan que la sucursal no fue calificada aún).</ul>
-    <ul>- number_opinions (int64): El número de calificaciones registradas en la sucursal. (Los 0s significan que no se encontraron sus números de opiniones).</ul>
-    <ul>- tiempo_delivery (int64): El tiempo de delivery promedio dela sucursal. (Los 0s significan que no se encontraron los tiempos de delivery).</ul>
-   <ul> - tipo_envio (str): Si la sucursal tenía envío gratuito o aún no había sido señalado. (o encontrado).</ul>
-   <ul> - dollar_mean_price: El precio promedio en doláres de todos los productos listados en el catálogo de la sucursal. (Los 0s significa que no mostraba ningún producto).</ul>
-</li>
+| Nombre de la columna | Tipo de dato | Descripción                         |
+|----------------------|--------------|-------------------------------------|
+| id_cadena            | int64        | El id único de la cadena           |
+| nombre_cadena        | str          | El nombre de la cadena             |
+| url_cadena           | str          | La URL de la cadena                |
+| id_pais              | int64        | El país asociado a la cadena       |
 
-<li>opiniones_sucursales.csv:
-    <ul>- id_sucursal (int64): El id único de la sucursal.</ul>
-    <ul>- demás columnas (float64): todas las demás opiniones. (Total 45 columnas separadas).</ul></li>
-</ol>
+#### sucursales.csv:
+Descripción: Tabla de 44,517 rows que relaciona cada sucursal en Rappi con su respectiva cadena de restaurantes.
 
-#### Archivos secundarios:
-<li>atributos_sucursales_bruto.csv: (Los atributos de cada sucursal pero sin limpiar / transformar)
-    <ul>- id_sucursal (int64): El id único de la sucursal.</ul>
-    <ul>- attributes (list): Lista que contiene [calificación_promedio, número de calificaciones, tiempo_entrega, tipo de envío].</ul>
-    <ul>- prices (list): Lista que contiene strings de los precios de todo el catálogo de dicha sucursal.</ul>
-    <ul>- opinions (list): Lista que contiene en tuplas las opiniones con sus porcentajes de dicha sucursal.</ul>
-</li>
+| Nombre de la columna   | Tipo de dato | Descripción                                   |
+|------------------------|--------------|-----------------------------------------------|
+| id_sucursal            | int64        | El id único de la sucursal                    |
+| id_cadena              | int64        | El id de la cadena asociada a la sucursal     |
+| url_sucursal           | str          | La URL asociada a la sucursal                 |
+| nombre_sucursal        | str          | El nombre de la sucursal                      |
+| direccion_sucursal     | str          | La dirección de la sucursal                   |
 
-<li>subcatalogos.csv: (Lista de urls de cada subcatálogo de cadenas de comida de cada país)
-    <ul>- id_subcatalogo (int64): El id único de este subcatálogo.</ul>
-    <ul>- url_subcatalogos (str): Los urls de cada subcatálogo.</ul>
-    <ul>- id_pais (int64): El id del país correspondiente a este subcatálogo.</ul>
-</li>
+#### atributos_sucursales_parsed.csv:
+Descripción: Tabla de 44,517 rows que relaciona cada sucursal de la tabla anterior y le añade datos sobre su performance en Rappi.
+Nota: Esta tabla podría hacer un join con la tabla anterior, al final ambas hablan a nivel sucursales, pero para evitar enviar a github un archivo enorme y pesado, decidí dejarlas divididas.
 
-<li>sucursales_pbi.csv: (Tabla de datos especial para el uso con Power Bi)
-    <ul>- id_sucursal (int64): El id único de la sucursal</ul>
-     <ul>- id_cadena (int64): EL id de la cadena asociada a la sucursal.</ul>
-    <ul>- nombre_sucursal (str): El nombre de la sucursal.</ul>
-</li>
+| Nombre de la columna   | Tipo de dato | Descripción                                                                                                 |
+|------------------------|--------------|-------------------------------------------------------------------------------------------------------------|
+| id_sucursal            | int64        | El id único de la sucursal                                                                                  |
+| mostraba_opiniones     | bool         | True o False, indica si la cadena registraba opiniones                                                      |
+| overral_stars          | float64      | La calificación promedio del 1 al 5 de la sucursal (0 indica que no ha sido calificada aún)                 |
+| number_opinions        | int64        | El número de calificaciones registradas en la sucursal (0 indica que no se encontraron opiniones)           |
+| tiempo_delivery        | int64        | El tiempo promedio de delivery de la sucursal (0 indica que no se encontraron tiempos de delivery)          |
+| tipo_envio             | str          | Indica si la sucursal tenía envío gratuito o no ha sido señalado                                           |
+| dollar_mean_price      | float64      | El precio promedio en dólares de los productos listados en el catálogo de la sucursal (0 indica sin productos) |
+
+#### opiniones_sucursales.csv:
+Descripción: Tabla de 44,517 rows dividida en 46 columnas, una por cada tipo de opinión posible en Rappi junto con el id de la sucursal.
+
+| Nombre de la columna   | Tipo de dato | Descripción                                           |
+|------------------------|--------------|-------------------------------------------------------|
+| id_sucursal            | int64        | El id único de la sucursal                            |
+| demás columnas         | float64      | Todas las demás opiniones (45 columnas en total)      |
+
+#### atributos_sucursales_bruto.csv:
+Descripción: Tabla de 44,517 rows agrupando todos los metadatos que una sucursal expone en la platforma (opiniones, precios de sus productos, tiempo de delivery, etc)
+Nota: De este archivo sale el de `atributos_sucursales_parsed.csv`
+
+| Nombre de la columna   | Tipo de dato | Descripción                                                                                       |
+|------------------------|--------------|---------------------------------------------------------------------------------------------------|
+| id_sucursal            | int64        | El id único de la sucursal                                                                        |
+| attributes             | list         | Lista que contiene `[calificación_promedio, número de calificaciones, tiempo_entrega, tipo de envío]` |
+| prices                 | list         | Lista que contiene los precios de todo el catálogo de dicha sucursal como strings                |
+| opinions               | list         | Lista que contiene tuplas con las opiniones y sus porcentajes para dicha sucursal                 |
+
+#### subcatalogos.csv:
+Descripción: Tabla de 224 rows que expone todas las URLs posible de un catalogo de un pais.
+Nota: Esta tabla no contiene información importante a nivel BI, fue creada mas que todo para facilitar el proceso de scraping.
+
+| Nombre de la columna   | Tipo de dato | Descripción                                    |
+|------------------------|--------------|------------------------------------------------|
+| id_subcatalogo         | int64        | El id único de este subcatálogo                |
+| url_subcatalogos       | str          | Los URLs de cada subcatálogo                   |
+| id_pais                | int64        | El id del país correspondiente a este subcatálogo |
+
+
+#### sucursales_pbi.csv:
+Descripción: Tabla de 44,517 rows similar a la del archivo `sucursales.csv` pero con columnas eliminadas y algunos ajustes a los datos.
+Nota: En su momento, Power BI tenía problemas al leer el archivo original (decía que algunos ids de sucursales se repetían) así que cree este para solucionar el bug. 
+
+| Nombre de la columna   | Tipo de dato | Descripción                                   |
+|------------------------|--------------|-----------------------------------------------|
+| id_sucursal            | int64        | El id único de la sucursal                   |
+| id_cadena              | int64        | El id de la cadena asociada a la sucursal    |
+| nombre_sucursal        | str          | El nombre de la sucursal                     |
+
+# Next steps:
+1. Transformar las direcciones del archivo `./csv_files/sucursales.csv` en coordenadas geoespaciales usando la API de [Google Maps](https://developers.google.com/maps/documentation/geocoding)
+2. Normalizar correctamente el archivo `./csv_files/opiniones_sucursales.csv`, poniendo en las 43 columnas distintas en 2 llamadas 'Tipo de opinión' y 'valor'.
 
 # Metadatos:
-
 Tiempo tomado: 5 días laborales.
