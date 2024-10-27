@@ -4,7 +4,7 @@
 
 Este repositorio documenta como obtuve y transformé los datos para realizar el siguiente reporte: [Rappi: Estado actual de su servicio estrella](https://app.powerbi.com/view?r=eyJrIjoiZGUxMDc4YWUtOWYwYi00NGIzLTkyZWMtMTk1NjhlZTAzOTY4IiwidCI6ImY4ODBjYzBjLTM5ODMtNDA1Mi04OTE1LTdlNDcxNzNmZDlhMSJ9)  
 
-Este formando parte de mi [portfolio](https://augustohuerta.notion.site/e37e6bbe39d84967a21219096fe9c0cc?v=d799e48262644e14b7c915e76520f1f0).
+El cual forma parte de mi [portfolio](https://augustohuerta.notion.site/e37e6bbe39d84967a21219096fe9c0cc?v=d799e48262644e14b7c915e76520f1f0).
 
 ## Datos recopilados:
 En este ETL se recopilan 4 dimensiones principales:
@@ -29,7 +29,7 @@ Entendiendo como sucursal (O restaurante en este proyecto) la división específ
 
 ### La data:
 
-Estos son los significados de cada atributo en los .csv's:
+Estos son los significados de cada atributo en los .csv's ubicados en `./csv_files/`:
 
 #### Archivos principales:
 <ol>
@@ -89,3 +89,7 @@ Estos son los significados de cada atributo en los .csv's:
      <ul>- id_cadena (int64): EL id de la cadena asociada a la sucursal.</ul>
     <ul>- nombre_sucursal (str): El nombre de la sucursal.</ul>
 </li>
+
+# Metadatos:
+
+Tiempo tomado: 5 días laborales.
