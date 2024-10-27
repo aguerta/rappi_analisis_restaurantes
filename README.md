@@ -64,6 +64,7 @@ Descripción: Tabla de 44,517 rows que relaciona cada sucursal en Rappi con su r
 
 #### atributos_sucursales_parsed.csv:
 Descripción: Tabla de 44,517 rows que relaciona cada sucursal de la tabla anterior y le añade datos sobre su performance en Rappi.
+
 Nota: Esta tabla podría hacer un join con la tabla anterior, al final ambas hablan a nivel sucursales, pero para evitar enviar a github un archivo enorme y pesado, decidí dejarlas divididas.
 
 | Nombre de la columna   | Tipo de dato | Descripción                                                                                                 |
@@ -86,6 +87,7 @@ Descripción: Tabla de 44,517 rows dividida en 46 columnas, una por cada tipo de
 
 #### atributos_sucursales_bruto.csv:
 Descripción: Tabla de 44,517 rows agrupando todos los metadatos que una sucursal expone en la platforma (opiniones, precios de sus productos, tiempo de delivery, etc)
+
 Nota: De este archivo sale el de `atributos_sucursales_parsed.csv`
 
 | Nombre de la columna   | Tipo de dato | Descripción                                                                                       |
@@ -97,6 +99,7 @@ Nota: De este archivo sale el de `atributos_sucursales_parsed.csv`
 
 #### subcatalogos.csv:
 Descripción: Tabla de 224 rows que expone todas las URLs posible de un catalogo de un pais.
+
 Nota: Esta tabla no contiene información importante a nivel BI, fue creada mas que todo para facilitar el proceso de scraping.
 
 | Nombre de la columna   | Tipo de dato | Descripción                                    |
@@ -108,6 +111,7 @@ Nota: Esta tabla no contiene información importante a nivel BI, fue creada mas 
 
 #### sucursales_pbi.csv:
 Descripción: Tabla de 44,517 rows similar a la del archivo `sucursales.csv` pero con columnas eliminadas y algunos ajustes a los datos.
+
 Nota: En su momento, Power BI tenía problemas al leer el archivo original (decía que algunos ids de sucursales se repetían) así que cree este para solucionar el bug. 
 
 | Nombre de la columna   | Tipo de dato | Descripción                                   |
