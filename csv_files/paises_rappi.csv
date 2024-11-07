@@ -1,10 +1,10 @@
-id_pais,url_paises,nombre_pais,equivalente_1_dolar
-0,https://www.rappi.com.ar/,Argentina,167.6508
-1,https://www.rappi.com.br/,Brasil,5.2195
-2,https://www.rappi.cl/,Chile,883.5
-3,https://www.rappi.com.co/,Colombia,4768.07
-4,https://www.rappi.co.cr/,Costa Rica,598.1305
-5,https://www.rappi.com.ec/,Ecuador,1
-6,https://www.rappi.com.mx/,México,19.3914
-7,https://www.rappi.com.pe/,Perú,3.822349
-8,https://www.rappi.com.uy/,Uruguay,39.40498
+id_pais,url_paises,nombre_pais,equivalente_1_dolar,población
+0,https://www.rappi.com.ar/,Argentina,167.6508,46044703 
+1,https://www.rappi.com.br/,Brasil,5.2195,203080756
+2,https://www.rappi.cl/,Chile,883.5,19629588
+3,https://www.rappi.com.co/,Colombia,4768.07,52215503
+4,https://www.rappi.co.cr/,Costa Rica,598.1305,5044197
+5,https://www.rappi.com.ec/,Ecuador,1,16938986
+6,https://www.rappi.com.mx/,México,19.3914,126014024
+7,https://www.rappi.com.pe/,Perú,3.822349,32625948
+8,https://www.rappi.com.uy/,Uruguay,39.40498,3444263
